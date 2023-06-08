@@ -1,0 +1,32 @@
+<div class="persona-container">
+    <h2>Personas</h2>
+  
+    <button class="btn-agregar" (click)="agregarPersona()">Agregar persona</button>
+  
+    <table class="tabla-personas">
+      <thead>
+        <tr>
+          <th>ID Persona</th>
+          <th>Título</th>
+          <th>Nombre</th>
+          <th>Fecha de Nacimiento</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let persona of personas">
+          <td><input type="text" [(ngModel)]="persona.idPersona"></td>
+          <td><input type="text" [(ngModel)]="persona.titulo"></td>
+          <td><input type="text" [(ngModel)]="persona.nombre"></td>
+          <td><input type="text" [(ngModel)]="persona.fechaNacimiento"></td>
+          <td>
+            <!-- Botones para editar o eliminar -->
+            <button class="btn-editar" (click)="editarPersona(persona)">Editar</button>
+            <button class="btn-eliminar" (click)="eliminarPersona(persona)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>
+  
